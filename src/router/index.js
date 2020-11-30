@@ -13,6 +13,14 @@ const routes = [
     }
   },
   {
+    path: '/cloud-tags',
+    name: 'CloudTags',
+    component: () => import('@/pages/CloudTagsPage'),
+    meta: {
+      layout: 'main-layout'
+    }
+  },
+  {
     path: '/dashboard',
     name: 'Dashboard',
     component: () => import('@/pages/DashboardPage'),
