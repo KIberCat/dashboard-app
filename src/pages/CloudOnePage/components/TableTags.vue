@@ -3,11 +3,21 @@
     <form @submit.prevent="addTag" class="mb-2">
       <div class="form-row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Название...">
+          <input
+            v-model="name"
+            type="text"
+            class="form-control"
+            placeholder="Название..."
+          >
         </div>
 
         <div class="col">
-          <input type="text" class="form-control" placeholder="Размер...">
+          <input
+            v-model="size"
+            type="text"
+            class="form-control"
+            placeholder="Размер..."
+          >
         </div>
 
         <button type="submit" class="btn btn-primary">Добавить</button>
@@ -42,6 +52,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import RowTag from './RowTag'
 
 export default {
@@ -51,16 +62,23 @@ export default {
   },
   data () {
     return {
-      tags: [
-        // {
-        //   name: 'Tag 1',
-        //   size: 6
-        // },
-        // {
-        //   name: 'Tag 2',
-        //   size: 4
-        // }
-      ]
+      name: '',
+      size: ''
+    }
+  },
+  computed: {
+    ...mapState({
+      tags: state => state.tag.tags
+    })
+  },
+  methods: {
+    addTag () {
+      const data = {
+        name: this.name,
+        size: this.size
+      }
+
+      this.$socket.emit('CREATE_TAG', data)
     }
   }
 }
