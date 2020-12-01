@@ -32,6 +32,7 @@
 
     <td>
       <button
+        @click="removeTag"
         type="button"
         class="btn btn-danger btn-sm"
       >
@@ -53,6 +54,11 @@ export default {
   data () {
     return {
       isEdit: false
+    }
+  },
+  methods: {
+    removeTag () {
+      this.$socket.emit('REMOVE_TAG', this.data.id)
     }
   }
 }

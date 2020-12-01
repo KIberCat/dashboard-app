@@ -5,6 +5,7 @@ export default {
   },
   mutations: {
     SOCKET_SET_TAGS (state, tags) {
+      console.log(tags)
       state.tags = tags
     }
   },
