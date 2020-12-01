@@ -7,6 +7,8 @@
         <router-view></router-view>
       </transition>
     </div>
+
+    <vue-snotify></vue-snotify>
   </div>
 </template>
 
@@ -20,6 +22,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import '~vue-snotify/styles/material';
+</style>
 
 <style lang="scss" scoped>
 .page-enter-active, .page-leave-active {

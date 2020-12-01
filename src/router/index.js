@@ -13,9 +13,17 @@ const routes = [
     }
   },
   {
-    path: '/cloud-tags',
-    name: 'CloudTags',
-    component: () => import('@/pages/CloudTagsPage'),
+    path: '/cloud-one',
+    name: 'CloudOne',
+    component: () => import('@/pages/CloudOnePage'),
+    meta: {
+      layout: 'main-layout'
+    }
+  },
+  {
+    path: '/cloud-two',
+    name: 'CloudTwo',
+    component: () => import('@/pages/CloudTwoPage'),
     meta: {
       layout: 'main-layout'
     }
