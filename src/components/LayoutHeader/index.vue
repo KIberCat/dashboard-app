@@ -34,12 +34,12 @@ export default {
           name: 'Главная'
         },
         {
-          path: '/cloud-tags',
-          name: 'Облако тегов 1'
+          path: '/cloud-one',
+          name: 'Облако 1'
         },
         {
-          path: '/cloud-tags',
-          name: 'Облако тегов 2'
+          path: '/cloud-two',
+          name: 'Облако 2'
         },
         {
           path: '/cloud-tags',
